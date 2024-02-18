@@ -1,4 +1,5 @@
 import 'package:class10assignment_flutter_batch2_task/screen/grid_details.dart';
+import 'package:class10assignment_flutter_batch2_task/screen/list_home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
@@ -29,6 +30,54 @@ class GridHome extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.blue, useMaterial3: true),
       home: Scaffold(
+        drawer: Drawer(
+          child: ListView(
+            children: <Widget>[
+              const DrawerHeader(
+                child: ListTile(
+                  title: Text(
+                    "Welcome",
+                    style: TextStyle(fontSize: 20),
+                  ),
+                ),
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ListHome(),
+                    ),
+                  );
+                },
+                child: const ListTile(
+                  leading: Icon(Icons.list),
+                  title: Text(
+                    "List View",
+                    style: TextStyle(fontSize: 20),
+                  ),
+                ),
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const GridHome(),
+                    ),
+                  );
+                },
+                child: const ListTile(
+                  leading: Icon(Icons.grid_3x3),
+                  title: Text(
+                    "Grid View",
+                    style: TextStyle(fontSize: 20),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
         appBar: AppBar(
           title: const Text(
             'Grid Info',
