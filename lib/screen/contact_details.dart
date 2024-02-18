@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-// ignore: must_be_immutable
 class ContactDetails extends StatelessWidget {
-  ContactDetails({super.key, required this.contactDetails});
+  const ContactDetails({super.key, required this.contactDetails});
 
-  String contactDetails = '';
+  // ignore: prefer_typing_uninitialized_variables
+  final contactDetails;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class ContactDetails extends StatelessWidget {
           title: const Text(
             'Contact Details',
             style: TextStyle(
-              color: Color.fromARGB(255, 71, 67, 67),
+              color: Colors.white,
             ),
           ),
           backgroundColor: Colors.blue,
@@ -29,10 +29,18 @@ class ContactDetails extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                contactDetails,
-                style: const TextStyle(
-                  fontSize: 18,
-                  color: Colors.black,
+                contactDetails["name"],
+                style:
+                    const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              ),
+              ListTile(
+                title: Text(
+                  contactDetails["email"],
+                  style: const TextStyle(fontSize: 18),
+                ),
+                subtitle: Text(
+                  contactDetails["address"],
+                  style: const TextStyle(fontSize: 18),
                 ),
               ),
               const SizedBox(height: 15),

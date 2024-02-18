@@ -10,21 +10,91 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List<dynamic> contact = [
-    {"name": "Alin", "email": "rezwansaki@gmail.com", "address": "Dhaka."},
-    {"name": "Maryam", "email": "maryam@gmail.com", "address": "Barisal"},
-    {"name": "Shaiful", "email": "maryam@gmail.com", "address": "Barisal"},
-    {"name": "Rafsan", "email": "rafsan@gmail.com", "address": "Barisal"},
-    {"name": "Tanni", "email": "tanni@gmail.com", "address": "Barisal"},
-    {"name": "Joba", "email": "joba@gmail.com", "address": "Qatar"},
-    {"name": "Russell", "email": "russell@gmail.com", "address": "B.Baria"},
-    {"name": "Faysal", "email": "faysal@gmail.com", "address": "Barisal"},
-    {"name": "Momo", "email": "momo@gmail.com", "address": "Barisal"},
-    {"name": "Setu", "email": "setu@gmail.com", "address": "Barisal"},
-    {"name": "Mishu", "email": "mishu@gmail.com", "address": "Barisal"},
-    {"name": "Masum", "email": "masum@gmail.com", "address": "Noakhali"},
-    {"name": "Evan", "email": "evan@gmail.com", "address": "Barisal"},
-    {"name": "Mukul", "email": "mukul@gmail.com", "address": "Comilla"},
-    {"name": "Himon", "email": "himon@gmail.com", "address": "Maymensing"}
+    {
+      "id": "1",
+      "name": "Alin",
+      "email": "rezwansaki@gmail.com",
+      "address": "Dhaka."
+    },
+    {
+      "id": "2",
+      "name": "Maryam",
+      "email": "maryam@gmail.com",
+      "address": "Barisal"
+    },
+    {
+      "id": "3",
+      "name": "Shaiful",
+      "email": "maryam@gmail.com",
+      "address": "Barisal"
+    },
+    {
+      "id": "4",
+      "name": "Rafsan",
+      "email": "rafsan@gmail.com",
+      "address": "Barisal"
+    },
+    {
+      "id": "5",
+      "name": "Tanni",
+      "email": "tanni@gmail.com",
+      "address": "Barisal"
+    },
+    {"id": "6", "name": "Joba", "email": "joba@gmail.com", "address": "Qatar"},
+    {
+      "id": "7",
+      "name": "Russell",
+      "email": "russell@gmail.com",
+      "address": "B.Baria"
+    },
+    {
+      "id": "8",
+      "name": "Faysal",
+      "email": "faysal@gmail.com",
+      "address": "Barisal"
+    },
+    {
+      "id": "9",
+      "name": "Momo",
+      "email": "momo@gmail.com",
+      "address": "Barisal"
+    },
+    {
+      "id": "10",
+      "name": "Setu",
+      "email": "setu@gmail.com",
+      "address": "Barisal"
+    },
+    {
+      "id": "11",
+      "name": "Mishu",
+      "email": "mishu@gmail.com",
+      "address": "Barisal"
+    },
+    {
+      "id": "12",
+      "name": "Masum",
+      "email": "masum@gmail.com",
+      "address": "Noakhali"
+    },
+    {
+      "id": "13",
+      "name": "Evan",
+      "email": "evan@gmail.com",
+      "address": "Barisal"
+    },
+    {
+      "id": "14",
+      "name": "Mukul",
+      "email": "mukul@gmail.com",
+      "address": "Comilla"
+    },
+    {
+      "id": "15",
+      "name": "Himon",
+      "email": "himon@gmail.com",
+      "address": "Maymensing"
+    }
   ];
 
   @override
@@ -55,7 +125,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     context,
                     MaterialPageRoute(
                         builder: (context) => ContactDetails(
-                              contactDetails: contact[index]["address"],
+                              contactDetails: contact[index],
                             )));
               },
               child: ListTile(
