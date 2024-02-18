@@ -61,7 +61,7 @@ class HomeScreen extends StatelessWidget {
           ),
           appBar: AppBar(
             title: const Text(
-              'Contacts',
+              'Home',
               style: TextStyle(
                 color: Colors.white,
               ),
@@ -69,9 +69,12 @@ class HomeScreen extends StatelessWidget {
             backgroundColor: Colors.blue,
             shadowColor: Colors.black,
           ),
-          body: const Text(
-            'Welcome!! Please use drawer and click List or Grid.',
-            style: TextStyle(fontSize: 25, color: Colors.black),
+          body: const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Text(
+              'Welcome!! Please use drawer and click List or Grid.',
+              style: TextStyle(fontSize: 25, color: Colors.black),
+            ),
           )),
     );
   }
