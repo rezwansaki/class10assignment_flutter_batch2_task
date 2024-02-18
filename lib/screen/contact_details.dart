@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
 
-class ContactDetails extends StatefulWidget {
+// ignore: must_be_immutable
+class ContactDetails extends StatelessWidget {
   ContactDetails({super.key, required this.contactDetails});
 
   String contactDetails = '';
 
-  @override
-  State<ContactDetails> createState() => _ContactDetailsState();
-}
-
-class _ContactDetailsState extends State<ContactDetails> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,10 +13,10 @@ class _ContactDetailsState extends State<ContactDetails> {
       theme: ThemeData(primarySwatch: Colors.blue, useMaterial3: true),
       home: Scaffold(
         appBar: AppBar(
-          title: Text(
-            contactDetails,
+          title: const Text(
+            'Contact Details',
             style: TextStyle(
-              color: Colors.white,
+              color: Color.fromARGB(255, 71, 67, 67),
             ),
           ),
           backgroundColor: Colors.blue,
@@ -32,9 +28,9 @@ class _ContactDetailsState extends State<ContactDetails> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                'jdlfjdlfjdlfjdlkfjdlfjdljf',
-                style: TextStyle(
+              Text(
+                contactDetails,
+                style: const TextStyle(
                   fontSize: 18,
                   color: Colors.black,
                 ),

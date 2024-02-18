@@ -51,8 +51,12 @@ class _HomeScreenState extends State<HomeScreen> {
           itemBuilder: (BuildContext context, int index) {
             return InkWell(
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ContactDetails()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ContactDetails(
+                              contactDetails: contact[index]["address"],
+                            )));
               },
               child: ListTile(
                 leading: CircleAvatar(
