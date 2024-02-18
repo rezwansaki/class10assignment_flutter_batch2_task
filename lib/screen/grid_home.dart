@@ -39,40 +39,42 @@ class GridHome extends StatelessWidget {
           backgroundColor: Colors.blue,
           shadowColor: Colors.black,
         ),
-        body: InkWell(
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const GridDetails(),
-              ),
-            );
-          },
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: MasonryGridView.count(
-              crossAxisCount: 2,
-              crossAxisSpacing: 20,
-              mainAxisSpacing: 20,
-              itemCount: gridInfo.length,
-              shrinkWrap: true,
-              itemBuilder: (BuildContext context, int index) {
-                return Container(
+        body: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: MasonryGridView.count(
+            crossAxisCount: 2,
+            crossAxisSpacing: 20,
+            mainAxisSpacing: 20,
+            itemCount: gridInfo.length,
+            shrinkWrap: true,
+            itemBuilder: (BuildContext context, int index) {
+              return InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => GridDetails(
+                        gridInfoDetails: gridInfo[index],
+                      ),
+                    ),
+                  );
+                },
+                child: Container(
                   height: 150,
                   width: 50,
                   color: Colors.green,
-                  child: const Center(
+                  child: Center(
                     child: Text(
-                      'One',
-                      style: TextStyle(
+                      gridInfo[index]["id"],
+                      style: const TextStyle(
                         fontSize: 28,
                         color: Colors.white,
                       ),
                     ),
                   ),
-                );
-              },
-            ),
+                ),
+              );
+            },
           ),
         ),
       ),
